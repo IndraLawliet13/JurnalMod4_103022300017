@@ -10,6 +10,54 @@
             Performance
         }
         private Mode currentMode = Mode.Quiet;
+        public void ModeUp()
+        {
+            switch (currentMode)
+            {
+                case Mode.Quiet:
+                    ToBalancedMode();
+                    break;
+                case Mode.Balanced:
+                    ToPerformanceMode();
+                    break;
+                case Mode.Performance:
+                    ToTurboMode();
+                    break;
+                case Mode.Turbo:
+                    break;
+            }
+        }
+        public void ModeDown()
+        {
+            switch (currentMode)
+            {
+                case Mode.Quiet:
+                    break;
+                case Mode.Balanced:
+                    ToQuiteMode();
+                    break;
+                case Mode.Performance:
+                    ToBalancedMode();
+                    break;
+                case Mode.Turbo:
+                    ToPerformanceMode();
+                    break;
+            }
+        }
+
+        public void TurboShortcut()
+        {
+            if (currentMode == Mode.Quiet)
+            {
+                ToTurboMode();
+            }
+            else if (currentMode == Mode.Turbo)
+            {
+                ToQuiteMode();
+            }
+        }
+
+
         public void ToQuiteMode()
         {
             if (currentMode != Mode.Quiet && (currentMode == Mode.Turbo || currentMode == Mode.Balanced))
@@ -40,7 +88,7 @@
             }
         }
 
-        public void ToTurboeMode()
+        public void ToTurboMode()
         {
             if (currentMode != Mode.Turbo && (currentMode == Mode.Performance || currentMode == Mode.Quiet))
             {

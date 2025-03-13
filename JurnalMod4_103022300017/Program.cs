@@ -7,10 +7,10 @@ class Program
         Console.WriteLine(KodeProduk.getKodeProduk("Laptop"));
         Console.WriteLine(KodeProduk.getKodeProduk("Mouse"));
         FanLaptop fan = new FanLaptop();
-        fan.ToBalancedMode();
-        fan.ToPerformanceMode();
-        fan.ToTurboeMode();
-
-
+        fan.TurboShortcut();
+        fan.TurboShortcut();
+        fan.ModeUp();
+        fan.ModeUp();
+        fan.ModeDown();
     }
 }
