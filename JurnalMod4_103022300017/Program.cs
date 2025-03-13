@@ -5,5 +5,12 @@ class Program
     public static void Main(String[] args)
     {
         Console.WriteLine(KodeProduk.getKodeProduk("Laptop"));
+        Console.WriteLine(KodeProduk.getKodeProduk("Mouse"));
+        FanLaptop fan = new FanLaptop();
+        fan.ToBalancedMode();
+        fan.ToPerformanceMode();
+        fan.ToTurboeMode();
+
+
     }
 }
